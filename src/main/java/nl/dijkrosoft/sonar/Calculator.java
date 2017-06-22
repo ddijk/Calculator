@@ -16,6 +16,9 @@ public class Calculator {
     public int multiply(int i, int j) {
         return i*j;
     }
-    
+    public double divide(int i, int j) {
+        return ((double)i)/j;
+    }
+
 
 }
