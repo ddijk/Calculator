@@ -12,10 +12,9 @@ public class CalculatorTest {
 
 
     @Test
-    public void add() throws Exception {
+    public void testAdd() throws Exception {
 
         Calculator calculator = new Calculator();
-        assertEquals(3, calculator.add(1,2));
+        assertEquals(3, calculator.add(1, 2));
     }
-
 }
