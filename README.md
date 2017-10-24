@@ -1,6 +1,6 @@
-# SonarQubeCoverage
+# Demo of SonarQubeCoverage
 
-Run all test via:
+Run all tests via:
 mvn verify
 
 Push to sonar via:
