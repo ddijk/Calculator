@@ -7,11 +7,11 @@ public class PressureConverter {
 
     double barToHectoPascal(double input) {
 
-        return input*1000;
+        return input;
     }
 
     double hectoPascalToBar(double input) {
 
-        return input/1000;
+        return input;
     }
 }

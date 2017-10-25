@@ -6,8 +6,8 @@ package nl.dijkrosoft.sonar;
 public class MoneyConverter {
 
     double convert(double value, String inputCurrency) {
-        if (inputCurrency.equals("dollar")) {
-            return value / 2;
+        if ( inputCurrency.equals( "dollar" )) {
+            return value/2;
         }
 
         System.out.println("Unsupported currency");
