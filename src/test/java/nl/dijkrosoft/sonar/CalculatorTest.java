@@ -17,4 +17,18 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         assertEquals(3, calculator.add(1, 2));
     }
+
+    @Test
+    public void testMultiply() throws Exception {
+
+        Calculator calculator = new Calculator();
+        assertEquals(2, calculator.multiply(1, 2));
+    }
+
+    @Test
+    public void testDivide() throws Exception {
+
+        Calculator calculator = new Calculator();
+        assertEquals(3, calculator.divide(6, 2), 0.1);
+    }
 }
