@@ -21,4 +21,14 @@ public class Color {
     public String toString() {
         return "Color met kleur " + kleur;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if ( !obj instanceof Color) {
+            return false;
+        }
+
+        Color other = (Color) obj;
+        return kleur.equals(other.kleur);
+    }
 }
