@@ -4,7 +4,9 @@ Run all tests via:
 mvn verify
 
 Push to sonar via:
-mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true sonar:sonar
+from Working Dir: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar
+or
+build job in Jenkins
 
 # local git push target:
 /Users/dickdijk/LOCAL_GIT_SERVERS/calculator
@@ -12,4 +14,5 @@ mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.fail
 # Jenkins, admin account: dick/admin
 http://localhost:9990/
 
-
+# Sonar : 
+http://localhost:9000/
