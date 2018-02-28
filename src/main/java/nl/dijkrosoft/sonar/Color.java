@@ -24,7 +24,7 @@ public class Color {
 
     @Override
     public boolean equals(Object obj) {
-        if ( !obj instanceof Color) {
+        if ( !(obj instanceof Color)) {
             return false;
         }
 
