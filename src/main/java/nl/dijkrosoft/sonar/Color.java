@@ -11,11 +11,6 @@ public class Color {
         this.kleur = kleur;
     }
 
-    @Override
-    public int hashCode() {
-        return 0;
-    }
-
 
     @Override
     public String toString() {
@@ -24,9 +19,6 @@ public class Color {
 
     @Override
     public boolean equals(Object obj) {
-        if ( !(obj instanceof Color)) {
-            return false;
-        }
 
         Color other = (Color) obj;
         return kleur.equals(other.kleur);
