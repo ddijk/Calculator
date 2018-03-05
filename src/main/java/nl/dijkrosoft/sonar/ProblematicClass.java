@@ -14,6 +14,14 @@ public class ProblematicClass {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        String val = (String) obj;
+
+       try {
+           Integer.parseInt(val);
+       } catch( Exception ex) {
+
+           // apparantly not an integer
+           ex.printStackTrace();
+       }
     }
 }
