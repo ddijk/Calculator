@@ -7,7 +7,6 @@ package nl.dijkrosoft.sonar;
 public class ProblematicClass {
 
 
-
     public boolean testIfContainsX(String input) {
         return input.indexOf("X") > 0;
     }
@@ -16,12 +15,14 @@ public class ProblematicClass {
     public boolean equals(Object obj) {
         String val = (String) obj;
 
-       try {
-           Integer.parseInt(val);
-       } catch( Exception ex) {
+        int age = 0;
+        try {
+            age = Integer.parseInt(val);
+        } catch (Exception ex) {
 
-           // apparantly not an integer
-           ex.printStackTrace();
-       }
+            // apparantly not an integer
+            ex.printStackTrace();
+        }
+        return age == 18;
     }
 }
