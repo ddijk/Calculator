@@ -29,6 +29,6 @@ public class CalculatorTest {
     public void testDivide() throws Exception {
 
         Calculator calculator = new Calculator();
-        assertEquals(3, calculator.divide(6, 2), 0.1);
+        assertEquals(3.0, calculator.divide(6, 2), 0.1);
     }
 }
