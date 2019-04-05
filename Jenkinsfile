@@ -14,11 +14,15 @@ pipeline {
 
     stages {
         stage('SCM') {
-           git 'https://github.com/ddijk/Calculator.git'
+          steps {
+               git 'https://github.com/ddijk/Calculator.git'
+          }
         }
 
         stage('build it') {
-           sh 'mvn clean package'
+          steps {
+             sh 'mvn clean package'
+          }
         }
      }
 }
