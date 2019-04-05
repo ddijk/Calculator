@@ -20,7 +20,6 @@ pipeline {
          sh 'mvn clean package sonar:sonar'
        } // SonarQube taskId is automatically attached to the pipeline context
      }
-   }
 
    // No need to occupy a node
    stage("Quality Gate") {
@@ -30,4 +29,5 @@ pipeline {
          error "Pipeline aborted due to quality gate failure: ${qg.status}"
        }
      }
+}
 }
