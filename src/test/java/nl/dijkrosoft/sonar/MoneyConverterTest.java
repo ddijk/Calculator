@@ -9,18 +9,19 @@ import static org.junit.Assert.*;
  */
 public class MoneyConverterTest {
 
+
+
     @Test
     public void convertDollar() throws Exception {
 
         MoneyConverter moneyConverter = new MoneyConverter();
-        double actualResult = moneyConverter.convert(3.5, "dollar");
-        assertEquals(1.75, actualResult, 0.1);
+        double actualResult = moneyConverter.convertToEuro(108, "dollar");
+        assertEquals(100, actualResult, 0.1);
     }
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void convertNonDollar() throws Exception {
         MoneyConverter moneyConverter = new MoneyConverter();
-        double actualResult = moneyConverter.convert(3.5, "mark");
-        assertEquals(3.5, actualResult, 0.1);
+        moneyConverter.convertToEuro(3.5, "mark");
     }
 
 

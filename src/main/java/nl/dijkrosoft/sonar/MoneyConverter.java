@@ -1,17 +1,15 @@
 package nl.dijkrosoft.sonar;
 
-/**
- * Created by dickdijk on 22/06/2017.
- */
 public class MoneyConverter {
+    public static double rate = 1.08;
 
-    double convert(double value, String inputCurrency) {
+    double convertToEuro(double value, String inputCurrency) {
         if (inputCurrency.equals("dollar")) {
-            return value / 2;
+            return value / rate;
         }
 
         System.out.println("Unsupported currency");
-        return value;
+        throw new IllegalArgumentException("Unsupported currency");
 
     }
 }
