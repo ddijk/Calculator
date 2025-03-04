@@ -14,5 +14,5 @@ build job in Jenkins
 # Jenkins, admin account: dick/admin
 http://localhost:9990/
 
-# Sonar : 
+# SonarQube : 
 http://localhost:9000/
