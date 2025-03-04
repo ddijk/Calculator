@@ -4,7 +4,8 @@ Run all tests via:
 mvn verify
 
 Push to sonar via:
-from Working Dir: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar
+from Working Dir: 
+mvn clean -Dsonar.token=sqa_5929128053fa35ae55a6f67d9d1fe67f3a56bd2f org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar
 or
 build job in Jenkins
 
