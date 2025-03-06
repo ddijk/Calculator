@@ -3,7 +3,7 @@
 Run all tests via:
 mvn verify
 
-Push to sonar via:
+Push to SonarQube via:
 from Working Dir: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar
 or
 build job in Jenkins
