@@ -7,6 +7,14 @@ variables:
   GIT_STRATEGY: clone
   DOCKER_TLS_CERTDIR: ""
   CI_SERVER_URL: "http://gitlab" 
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+cache:
+  key: 
+    files:
+      - pom.xml  # Cache changes when pom.xml changes
+  paths:
+    - .m2/repository
 
 # Your job
 job_name:
@@ -20,6 +28,6 @@ job_name:
     - mvn test
   # Optional: add before_script to check environment
   before_script:
-    - echo "Checking environment..."
+    - echo "Checking environment...prj_dir=$CI_PROJECT_DIR slug:$CI_COMMIT_REF_SLUG"
     - pwd
     - ls -la
