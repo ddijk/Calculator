@@ -17,6 +17,7 @@ job_name:
   script:
     - echo "My Running calc job"
     # Add more commands here
+    - mvn test
   # Optional: add before_script to check environment
   before_script:
     - echo "Checking environment..."
