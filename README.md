@@ -1,4 +1,5 @@
 # Demo of SonarQubeCoverage
+# test runner
 
 Run all tests via:
 mvn verify
