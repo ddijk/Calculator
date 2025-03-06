@@ -1,0 +1,5 @@
+job_name:
+  script:
+    - echo "My Running calc job"
+  tags:
+    - calc
