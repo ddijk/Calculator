@@ -8,6 +8,9 @@ variables:
   DOCKER_TLS_CERTDIR: ""
   CI_SERVER_URL: "http://gitlab" 
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+  GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+
 
 cache:
   key: 
@@ -25,7 +28,7 @@ job_name:
   script:
     - echo "My Running calc job"
     # Add more commands here
-    - mvn test
+    - mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
   # Optional: add before_script to check environment
   before_script:
     - echo "Checking environment...prj_dir=$CI_PROJECT_DIR slug:$CI_COMMIT_REF_SLUG"
