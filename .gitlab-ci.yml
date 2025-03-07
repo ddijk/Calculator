@@ -26,6 +26,8 @@ job_name:
     when:
       - runner_system_failure
       - unknown_failure
+      - api_failure
+      - script_failure
   stage: build
   image: maven:3.9.4-eclipse-temurin-17
   tags:
