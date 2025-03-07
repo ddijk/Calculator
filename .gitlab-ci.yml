@@ -22,7 +22,7 @@ cache:
 # Your job
 job_name:
   retry:
-    max: 2
+    max: 5
     when:
       - runner_system_failure
       - unknown_failure
