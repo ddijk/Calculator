@@ -21,6 +21,11 @@ cache:
 
 # Your job
 job_name:
+  retry:
+    max: 2
+    when:
+      - runner_system_failure
+      - unknown_failure
   stage: build
   image: maven:3.9.4-eclipse-temurin-17
   tags:
