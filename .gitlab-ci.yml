@@ -1,6 +1,9 @@
 # Define stages
 stages:
-  - build
+  - build-sonar
+
+build-sonar:
+  stage: build-sonar
 
 # Define variables
 variables:
@@ -8,14 +11,25 @@ variables:
   DOCKER_TLS_CERTDIR: ""
   CI_SERVER_URL: "http://gitlab" 
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+  GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
 
 cache:
-  key: 
-    files:
-      - pom.xml  # Cache changes when pom.xml changes
+  policy: pull-push
+  key: "sonar-cache-$CI_COMMIT_REF_SLUG"
   paths:
+    - "${SONAR_USER_HOME}/cache"
+    - sonar-scanner/
     - .m2/repository
-
+      
+  script: 
+    - mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+  allow_failure: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == 'master'
+    - if: $CI_COMMIT_BRANCH == 'main'
+    - if: $CI_COMMIT_BRANCH == 'develop'
 # Your job
 job_name:
   stage: build
