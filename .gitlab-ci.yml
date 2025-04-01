@@ -34,8 +34,10 @@ job_name:
     - calc
   script:
     - echo "My Running calc job"
-    # Add more commands here
-    - mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+    # First run tests with JaCoCo to generate coverage report
+    - mvn clean verify
+    # Then run Sonar analysis
+    - mvn sonar:sonar
   # Optional: add before_script to check environment
   before_script:
     - echo "Checking environment...prj_dir=$CI_PROJECT_DIR slug:$CI_COMMIT_REF_SLUG"
