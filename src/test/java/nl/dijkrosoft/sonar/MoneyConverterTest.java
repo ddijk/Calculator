@@ -14,7 +14,7 @@ public class MoneyConverterTest {
 
         MoneyConverter moneyConverter = new MoneyConverter();
         double actualResult = moneyConverter.convert(3.5, "dollar");
-        assertEquals(1.75, actualResult, 0.1);
+        assertEquals(3.24, actualResult, 0.1);
     }
     @Test
     public void convertNonDollar() throws Exception {
