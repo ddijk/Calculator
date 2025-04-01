@@ -1,23 +1,24 @@
 package nl.dijkrosoft.sonar;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by dickdijk on 22/06/2017.
  */
-public class MoneyConverterTest {
+class MoneyConverterTest {
 
     @Test
-    public void convertDollar() throws Exception {
+    void convertDollar() throws Exception {
 
         MoneyConverter moneyConverter = new MoneyConverter();
         double actualResult = moneyConverter.convert(3.5, "dollar");
         assertEquals(3.24, actualResult, 0.1);
     }
+
     @Test
-    public void convertNonDollar() throws Exception {
+    void convertNonDollar() throws Exception {
         MoneyConverter moneyConverter = new MoneyConverter();
         double actualResult = moneyConverter.convert(3.5, "mark");
         assertEquals(3.5, actualResult, 0.1);

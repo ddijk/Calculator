@@ -1,22 +1,23 @@
 package nl.dijkrosoft.sonar;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * Created by dickdijk on 24/10/2017.
  */
-public class ProblematicClassTest {
+class ProblematicClassTest {
 
     @Test
-    public void verifyInputContainsX() throws Exception {
+    void verifyInputContainsX() throws Exception {
         ProblematicClass instance = new ProblematicClass();
         assertTrue(instance.testIfContainsX("AXA"));
     }
 
     @Test
-    public void verifyInputContainsNoX() throws Exception {
+    void verifyInputContainsNoX() throws Exception {
         ProblematicClass instance = new ProblematicClass();
         assertFalse(instance.testIfContainsX("ABC"));
 

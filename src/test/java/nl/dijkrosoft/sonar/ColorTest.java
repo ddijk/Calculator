@@ -1,22 +1,22 @@
 package nl.dijkrosoft.sonar;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by dickdijk on 30/08/2017.
  */
-public class ColorTest {
+class ColorTest {
 
 
     @Test
-    public void test() {
+    void test() {
 
 
         Color color1 = new Color("blauw");
