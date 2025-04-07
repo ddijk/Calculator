@@ -9,9 +9,6 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Created by dickdijk on 30/08/2017.
- */
 class ColorTest {
 
 

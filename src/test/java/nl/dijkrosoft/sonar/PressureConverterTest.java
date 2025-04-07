@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Created by dickdijk on 22/06/2017.
- */
 class PressureConverterTest {
     @Test
     void barToHectoPascal() throws Exception {
