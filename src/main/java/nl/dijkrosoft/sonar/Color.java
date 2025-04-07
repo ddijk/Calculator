@@ -1,8 +1,5 @@
 package nl.dijkrosoft.sonar;
 
-/**
- * Created by dickdijk on 30/08/2017.
- */
 public class Color {
 
     String kleur;
@@ -14,7 +11,7 @@ public class Color {
 
     @Override
     public String toString() {
-        return "Color met kleur " + kleur;
+        return "Color: " + kleur;
     }
 
     @Override
