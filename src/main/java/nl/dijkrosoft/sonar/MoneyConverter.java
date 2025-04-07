@@ -1,8 +1,5 @@
 package nl.dijkrosoft.sonar;
 
-/**
- * Created by dickdijk on 22/06/2017.
- */
 public class MoneyConverter {
 
     double convert(double value, String inputCurrency) {
