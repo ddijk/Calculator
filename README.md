@@ -1,21 +1,3 @@
-# Demo of SonarQubeCoverage
-# test runner
+# token sqp_1e8f1380df1f03b442a0ee56396fa34b40d02efd
+mvn sonar:sonar -Dsonar.token=sqp_1e8f1380df1f03b442a0ee56396fa34b40d02efd  -Dsonar.url=http://localhost:9000 -Dsonar.projectKey=sonar.dijkrosoft.nl:calculator 
 
-Run all tests via:
-mvn verify
-
-Push to SonarQube via:
-from Working Dir: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar
-or
-build job in Jenkins
-
-# local git push target:
-/Users/dickdijk/LOCAL_GIT_SERVERS/calculator
-
-# Jenkins, admin account: dick/admin
-http://localhost:9990/
-
-# SonarQube : 
-http://localhost:9000/
-
-# Gitlab  1

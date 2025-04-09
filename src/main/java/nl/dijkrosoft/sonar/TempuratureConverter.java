@@ -7,7 +7,8 @@ public class TempuratureConverter {
     }
 
     public static double convertFromCelsiusToFahrenheit(double valueCelcius) {
-        return valueCelcius * 9 / 5 + 32;
+        double valueFahrenheit = valueCelcius * 9 / 5 + 32;
+        return valueFahrenheit;
     }
 
     public static double convertFromCelciusToKelvin(double valueCelcius) {
