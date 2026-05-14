@@ -1,6 +1,6 @@
 package nl.dijkrosoft.sonar;
 
-public class TempuratureConverter {
+public class TemperatureConverter {
 
     public static double convertFromFahrenheitToCelcius(double valueFahrenheit) {
         return (valueFahrenheit - 32) * 5 / 9;
