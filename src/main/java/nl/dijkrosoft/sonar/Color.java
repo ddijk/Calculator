@@ -1,5 +1,7 @@
 package nl.dijkrosoft.sonar;
 
+import java.util.Objects;
+
 public class Color {
 
     String kleur;
@@ -17,7 +19,19 @@ public class Color {
     @Override
     public boolean equals(Object obj) {
 
-        Color other = (Color) obj;
-        return kleur.equals(other.kleur);
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Color other)) {
+            return false;
+        }
+
+        return Objects.equals(kleur, other.kleur);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(kleur);
     }
 }
