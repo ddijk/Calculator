@@ -1,0 +1,7 @@
+{
+  "project": {
+    "projectKey": "sonar.dijkrosoft.nl:calculator",
+    "path": ".",
+    "serverUrl": "http://localhost:9000"
+  }
+}
