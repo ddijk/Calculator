@@ -1,7 +1,8 @@
 {
   "project": {
-    "projectKey": "sonar.dijkrosoft.nl:calculator",
+    "projectKey": "ddijk_Calculator",
     "path": ".",
-    "serverUrl": "http://localhost:9000"
+    "region": "eu",
+    "organization": "ddijk"
   }
 }
