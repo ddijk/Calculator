@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and SonarQube Scan
+    runs-on: ubuntu-latest
+
+    env:
+      MAVEN_OPTS: -Dmaven.repo.local=${{ github.workspace }}/.m2/repository
+      SONAR_USER_HOME: ${{ github.workspace }}/.sonar
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Cache Maven repository
+        uses: actions/cache@v4
+        with:
+          path: .m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Check environment
+        run: |
+          echo "Checking environment... workspace=$GITHUB_WORKSPACE ref=${GITHUB_REF_NAME}"
+          pwd
+          ls -la
+
+      - name: Build and test
+        run: mvn clean verify
+
+      - name: SonarQube analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        run: mvn sonar:sonar
