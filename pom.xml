@@ -11,7 +11,7 @@
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>17</java.version>
+        <java.version>25</java.version>
         <sonar.projectKey>talks_calculator_106f9375-0343-478d-97c5-60323fe15fda</sonar.projectKey>
         <sonar.projectName>Calculator</sonar.projectName>
         <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
@@ -72,7 +72,6 @@
             <!-- Source:
             https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
             <plugin>
-
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>5.8.0.7211</version>
