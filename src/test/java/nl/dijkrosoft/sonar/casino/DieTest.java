@@ -12,6 +12,9 @@ class DieTest {
         Die die = new Die();
         int[] rolls = die.rollTwoDice();
         assertNotNull(rolls);
-        assertEquals(3, rolls.length);
+        assertEquals(2, rolls.length);
+        for (int roll : rolls) {
+            assertTrue(roll >= 1 && roll <= 6, "roll out of range: " + roll);
+        }
     }
 }
