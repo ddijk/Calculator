@@ -1,7 +1,7 @@
 package nl.dijkrosoft.sonar;
 
 public class MoneyConverter {
-
+/*
     double convertToEuro(double value, String inputCurrency) {
         if (inputCurrency.equals("dollar")) {
             double rate = 0.926;
@@ -17,5 +17,11 @@ public class MoneyConverter {
         System.out.println("Unsupported currency");
         return value;
 
+    }
+
+ */
+
+    @Override
+    public boolean equals(Object obj) {
     }
 }
