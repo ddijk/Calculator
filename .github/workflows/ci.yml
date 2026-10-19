@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - casino
   pull_request:
     branches:
       - main
