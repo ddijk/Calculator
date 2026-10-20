@@ -4,8 +4,9 @@ import java.util.Random;
 
 public class Die {
 
+    private final Random random = new Random();
+
     public int[] rollTwoDice() {
-        Random random = new Random();
         return random.ints(2, 1, 7).toArray();
     }
 
