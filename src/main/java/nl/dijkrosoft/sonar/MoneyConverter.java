@@ -1,5 +1,7 @@
 package nl.dijkrosoft.sonar;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class MoneyConverter {
     /*
         double convertToEuro(double value, String inputCurrency) {
@@ -39,5 +41,9 @@ public class MoneyConverter {
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
+    }
+
+    Boolean isSameNumberValue(AtomicLong a, AtomicLong b) {
+        return a.equals(b); // Noncompliant, this is true only if a == b
     }
 }
