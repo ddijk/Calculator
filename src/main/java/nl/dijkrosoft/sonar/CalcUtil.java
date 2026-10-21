@@ -7,7 +7,7 @@ public class CalcUtil {
     static boolean comparePrices(String val1, String val2) {
         BigDecimal priceA = new BigDecimal(val1);
         BigDecimal priceB = new BigDecimal(val2);
-        return priceA.equals(priceB);
+        return priceA.compareTo(priceB) == 0;
     }
 
     static void main() {
