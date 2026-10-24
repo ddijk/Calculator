@@ -1,5 +1,6 @@
 package nl.dijkrosoft.sonar.casino;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Die {
@@ -13,5 +14,13 @@ public class Die {
         Die die = new Die();
         int[] result = die.rollTwoDice();
         System.out.println("You rolled 2 dice, the result is '%d' and '%d'".formatted(result[0], result[1]));
+
+        int score = die.calculateScore(result[0], result[1]);
+        System.out.println("Your score is: " + score);
+    }
+
+    public int calculateScore(int k, int j) {
+       return Arrays.asList(k, j).stream() // Noncompliant
+                .mapToInt(i -> i).sum();
     }
 }
