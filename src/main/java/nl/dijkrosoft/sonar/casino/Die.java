@@ -20,7 +20,6 @@ public class Die {
     }
 
     public int calculateScore(int k, int j) {
-       return Arrays.asList(k, j).stream() // Noncompliant
-                .mapToInt(i -> i).sum();
+       return Arrays.stream(new int[]{k, j}).sum();
     }
 }
